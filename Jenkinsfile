@@ -1,5 +1,8 @@
 pipeline {
     agent any
+     tools {
+        nodejs 'node' // Utilisation de Node.js configuré dans Jenkins
+    }
     
     environment {
         NODE_ENV = 'test'
