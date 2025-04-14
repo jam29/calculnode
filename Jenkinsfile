@@ -11,6 +11,12 @@ pipeline {
     }
 
     stages {
+
+        stage('Test Sonar Connection') {
+    steps {
+        sh 'curl -v http://localhost:9000'
+    }
+}
         stage('Install Dependencies') {
             steps {
                 sh 'npm install'
