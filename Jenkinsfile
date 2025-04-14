@@ -30,6 +30,13 @@ pipeline {
             }
         }
 
+        stage('Check Coverage Report') {
+            steps {
+                sh 'ls -lh coverage/'
+                sh 'cat coverage/lcov.info | head -n 20'
+            }
+        }
+
         stage('SonarQube Analysis') {
             steps {
                 withSonarQubeEnv('SonarQube') { // nom du serveur défini dans Jenkins system
