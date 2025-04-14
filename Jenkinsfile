@@ -50,7 +50,10 @@ ${env.SONARQUBE_SCANNER_HOME}/bin/sonar-scanner \
     -Dsonar.test.inclusions=tests/**/*.test.js \
     -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info \
     -Dsonar.javascript.coveragePlugin=lcov \
-    -Dsonar.projectBaseDir=.
+    -Dsonar.projectBaseDir=. \
+    -Dsonar.testExecutionReportPaths=test-report.xml \
+    -Dsonar.qualitygate.wait=true \  # Makes Jenkins wait for Quality Gate result
+    -Dsonar.qualitygate.timeout=600  # Timeout in seconds (optional)
 """
 
                 }
