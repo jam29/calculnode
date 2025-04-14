@@ -48,7 +48,8 @@ pipeline {
                         -Dsonar.tests=tests \
                         -Dsonar.inclusions=src/**/*.js \
                         -Dsonar.test.inclusions=tests/**/*.test.js \
-                        -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
+                        -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info \
+                        -Dsonar.javascript.coveragePlugin=lcov
                     """
                 }
             }
