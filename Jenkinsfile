@@ -40,17 +40,19 @@ pipeline {
         stage('SonarQube Analysis') {
             steps {
                 withSonarQubeEnv('SonarQube') { // nom du serveur défini dans Jenkins system
-                    sh """
-                    ${env.SONARQUBE_SCANNER_HOME}/bin/sonar-scanner \
-                        -Dsonar.projectKey=calculnode \
-                        -Dsonar.projectName="Calcul Node" \
-                        -Dsonar.sources=src \
-                        -Dsonar.tests=tests \
-                        -Dsonar.inclusions=src/**/*.js \
-                        -Dsonar.test.inclusions=tests/**/*.test.js \
-                        -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info \
-                        -Dsonar.javascript.coveragePlugin=lcov
-                    """
+                   sh """
+${env.SONARQUBE_SCANNER_HOME}/bin/sonar-scanner \
+    -Dsonar.projectKey=calculnode \
+    -Dsonar.projectName="Calcul Node" \
+    -Dsonar.sources=src \
+    -Dsonar.tests=tests \
+    -Dsonar.inclusions=src/**/*.js \
+    -Dsonar.test.inclusions=tests/**/*.test.js \
+    -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info \
+    -Dsonar.javascript.coveragePlugin=lcov \
+    -Dsonar.projectBaseDir=.
+"""
+
                 }
             }
         }
