@@ -3,11 +3,11 @@ pipeline {
 
     tools {
         nodejs 'nodejs' // Utilisation de Node.js configuré dans Jenkins
-        sonarScanner 'sonar-scanner'
     }
 
     environment {
         NODE_ENV = 'test'
+        SONARQUBE_SCANNER_HOME = tool 'sonar-scanner' // nom défini dans Jenkins
     }
 
     stages {
@@ -32,7 +32,7 @@ pipeline {
         stage('SonarQube Analysis') {
             steps {
                 withSonarQubeEnv('SonarQube') { // nom du serveur défini dans Jenkins
-                    sh "sonar-scanner"
+                    sh "${env.SONARQUBE_SCANNER_HOME}/bin/sonar-scanner"
                 }
             }
         }
