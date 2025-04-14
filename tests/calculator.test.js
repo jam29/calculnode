@@ -1,7 +1,7 @@
 // tests unitaires. 
 const Calculator = require('../src/calculator');
 
-describe('Calculator', () => {
+describe('Ton Calculator', () => {
   describe('add()', () => {
     test('adds two positive numbers correctly', () => {
       expect(Calculator.add(2, 3)).toBe(5);

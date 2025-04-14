@@ -1,11 +1,10 @@
 {
   "name": "calculator",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "jest --coverage --collectCoverageFrom='src/**/*.js'",
-    "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage"
+    "test:watch": "jest --watch"
   },
   "keywords": [],
   "author": "",
