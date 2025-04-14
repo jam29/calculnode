@@ -14,7 +14,7 @@ pipeline {
 
         stage('Test Sonar Connection') {
     steps {
-        sh 'curl -v http://localhost:9000'
+        sh 'curl -v http://sonarqube:9000'
     }
 }
         stage('Install Dependencies') {
