@@ -13,10 +13,11 @@ pipeline {
     stages {
 
         stage('Test Sonar Connection') {
-    steps {
-        sh 'curl -v http://sonarqube:9000'
-    }
-}
+            steps {
+                sh 'curl -v http://sonarqube:9000'
+            }
+        }
+
         stage('Install Dependencies') {
             steps {
                 sh 'npm install'
@@ -32,7 +33,16 @@ pipeline {
         stage('SonarQube Analysis') {
             steps {
                 withSonarQubeEnv('SonarQube') { // nom du serveur défini dans Jenkins
-                    sh "${env.SONARQUBE_SCANNER_HOME}/bin/sonar-scanner"
+                    sh """
+                    ${env.SONARQUBE_SCANNER_HOME}/bin/sonar-scanner \
+                        -Dsonar.projectKey=calculnode \
+                        -Dsonar.projectName="Calcul Node" \
+                        -Dsonar.sources=src \
+                        -Dsonar.tests=tests \
+                        -Dsonar.inclusions=src/**/*.js \
+                        -Dsonar.test.inclusions=tests/**/*.test.js \
+                        -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
+                    """
                 }
             }
         }
@@ -46,7 +56,6 @@ pipeline {
         }
 
         stage('Deploy') {
-           
             steps {
                 sh 'echo DEEPPPLLOOYY'
             }
