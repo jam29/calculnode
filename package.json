@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --coverage --collectCoverageFrom='src/**/*.js'",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage"
   },
@@ -15,3 +15,5 @@
     "jest": "^29.7.0"
   }
 }
+
+

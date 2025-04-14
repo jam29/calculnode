@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1744538264848" clover="3.2.0">
-  <project timestamp="1744538264848" name="All files">
-    <metrics statements="23" coveredstatements="23" conditionals="26" coveredconditionals="26" methods="6" coveredmethods="6" elements="55" coveredelements="55" complexity="0" loc="23" ncloc="23" packages="1" files="1" classes="1"/>
+<coverage generated="1744615837327" clover="3.2.0">
+  <project timestamp="1744615837327" name="All files">
+    <metrics statements="30" coveredstatements="23" conditionals="26" coveredconditionals="26" methods="6" coveredmethods="6" elements="62" coveredelements="55" complexity="0" loc="30" ncloc="30" packages="1" files="2" classes="2"/>
+    <file name="app.js" path="/Users/jam/Desktop/LEARNIT/CICD/calculator/src/app.js">
+      <metrics statements="7" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <line num="2" count="0" type="stmt"/>
+      <line num="4" count="0" type="stmt"/>
+      <line num="5" count="0" type="stmt"/>
+      <line num="6" count="0" type="stmt"/>
+      <line num="7" count="0" type="stmt"/>
+      <line num="8" count="0" type="stmt"/>
+      <line num="9" count="0" type="stmt"/>
+    </file>
     <file name="calculator.js" path="/Users/jam/Desktop/LEARNIT/CICD/calculator/src/calculator.js">
       <metrics statements="23" coveredstatements="23" conditionals="26" coveredconditionals="26" methods="6" coveredmethods="6"/>
       <line num="3" count="6" type="cond" truecount="4" falsecount="0"/>
